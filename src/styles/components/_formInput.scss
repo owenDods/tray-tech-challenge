@@ -1,0 +1,70 @@
+$formInput-checkboxSize: 20px;
+
+.formInput {
+
+	padding: $_gutter-small;
+	background-color: $_lightGrey;
+	border-radius: $_radius;
+	display: flex;
+	flex-direction: column;
+	transition: background-color $_transitionTiming ease-in-out;
+
+	&__labelContent {
+		display: flex;
+	}
+
+	&__label {
+		font-size: $_fontSize-large;
+		line-height: $_fontSize-large;
+		margin: 0 0 $_gutter-tiny 0;
+		display: flex;
+	}
+
+	&__required {
+		color: $_orange-primary;
+		margin: 0 0 0 $_gutter-tiny;
+	}
+
+	&__error {
+		margin: 0 0 0 $_gutter-tiny;
+	}
+
+	&--error {
+		background-color: $_orange-tertiary;
+	}
+
+	&--checkbox {
+
+		padding: 0;
+		position: relative;
+		background-color: $_green-primary;
+		color: $_black;
+		box-shadow: $_shadow;
+
+		&:hover {
+			background-color: $_green-secondary;
+		}
+
+		&:active {
+			background-color: $_green-tertiary;
+		}
+
+		.formInput__label {
+			cursor: pointer;
+			padding: $_gutter-small $_gutter-small $_gutter-small ($_gutter-small * 2 + $formInput-checkboxSize);
+			margin: 0;
+		}
+
+		input {
+			width: $formInput-checkboxSize;
+			height: $formInput-checkboxSize;
+			position: absolute;
+			left: $_gutter-small;
+			top: 0;
+			bottom: 0;
+			margin: auto;
+		}
+
+	}
+
+}

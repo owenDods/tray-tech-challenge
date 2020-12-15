@@ -1,0 +1,125 @@
+$wizard-contentWidth: 60%;
+
+.wizard {
+
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+
+	&__content {
+
+		width: $wizard-contentWidth;
+		height: 100%;
+		margin: auto;
+		position: relative;
+
+		> * {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			box-sizing: border-box;
+		}
+
+	}
+
+	&__progressButton {
+
+		margin: $_gutter $_gutter $_gutter auto;
+		width: 20vw;
+		height: 10vh;
+		font-size: $_fontSize-large;
+
+		&-enter {
+
+			opacity: 0;
+
+			&-active {
+				transition: opacity $_transitionTiming ease-in-out $_transitionTiming;
+				opacity: 1;
+			}
+
+		}
+
+		&-exit {
+
+			opacity: 1;
+
+			&-active {
+				transition: opacity $_transitionTiming ease-in-out;
+				opacity: 0;
+			}
+
+		}
+
+	}
+
+	&-enter {
+
+		opacity: 0;
+		transform: translateX(50%);
+
+		&-active {
+			transition: opacity $_transitionTiming ease-in-out $_transitionTiming, transform $_transitionTiming ease-in-out $_transitionTiming;
+			opacity: 1;
+			transform: translateX(0);
+		}
+
+	}
+
+	&-exit {
+
+		opacity: 1;
+		transform: translateX(0);
+
+		&-active {
+			transition: opacity $_transitionTiming ease-in-out, transform $_transitionTiming ease-in-out;
+			opacity: 0;
+			transform: translateX(-50%);
+		}
+
+	}
+
+	&StepStatus {
+
+		margin: $_gutter auto;
+		width: $wizard-contentWidth;
+		font-size: $_fontSize-medium;
+		display: flex;
+
+		&__stepName {
+
+			background-color: $_green-primary;
+			flex: 1 1 auto;
+			text-align: center;
+			color: $_black;
+			transition: background-color $_transitionTiming ease-in-out, color $_transitionTiming ease-in-out;
+			margin-right: $_gutter-tiny;
+
+			&:first-child {
+				border-top-left-radius: $_radius;
+				border-bottom-left-radius: $_radius;
+			}
+
+			&:last-child {
+				border-top-right-radius: $_radius;
+				border-bottom-right-radius: $_radius;
+				margin-right: 0;
+			}
+
+			&--active {
+
+				background-color: $_green-secondary;
+				font-weight: bold;
+
+				& ~ .wizardStepStatus__stepName {
+					background-color: $_lightGrey;
+				}
+
+			}
+
+		}
+
+	}
+
+}

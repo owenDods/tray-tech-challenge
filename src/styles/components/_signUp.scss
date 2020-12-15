@@ -1,0 +1,37 @@
+.signUp {
+
+	&UserStep,
+	&PrivacyStep,
+	&DoneStep {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&UserStep,
+	&PrivacyStep {
+		justify-content: space-around;
+	}
+
+	&DoneStep {
+
+		text-align: center;
+
+		h2 {
+			font-size: $_fontSize-huge;
+			cursor: default;
+			margin: 0 0 $_gutter;
+		}
+
+		p {
+			font-size: $_fontSize-large;
+		}
+
+	}
+
+	&Summary {
+		background-color: $_lightGrey;
+		border-radius: $_radius;
+		margin: 0 0 $_gutter;
+	}
+
+}
