@@ -17,7 +17,7 @@ App will be vailable at http://localhost:1234/
 - `yarn test` - runs any `*.test.js` files
 
 ## Task outline
-You will write a web application that shows a web form to collect data from a user before signing up for a service. See the screenshot below for possible design and layout of requirements, but feel free to come up with your own design for the form if there are changes you think would be an improvement.
+You will write a web application that shows a web form to collect data from a user before signing up for a service.
 
 ## Requirements
 Build a GUI that:
